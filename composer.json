@@ -1,0 +1,17 @@
+{
+    "name": "maric-trading/trixeditor-bundle",
+    "version": "0.0.1",
+    "description": "Trixeditor bundle for Symfony",
+    "autoload": {
+        "psr-4": {
+            "MaricTrading\\TrixeditorBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Eric",
+            "email": "eric@simpleclinic.net"
+        }
+    ],
+    "require": {}
+}
