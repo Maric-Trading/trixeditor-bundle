@@ -7,6 +7,9 @@
             "MaricTrading\\TrixeditorBundle\\": "src/"
         }
     },
+    "license": [
+        "MIT"
+    ],
     "authors": [
         {
             "name": "Eric",
