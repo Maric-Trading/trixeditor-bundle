@@ -13,8 +13,8 @@ class TrixEditorType extends AbstractType
 
     public function getParent()
     {
-        return FormType::class;
-        //return TextareaType::class;
+        //return FormType::class;
+        return TextareaType::class;
     }
 
 

@@ -1,6 +1,6 @@
 {%- block trixeditor_widget -%}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/trixeditor/trix.css') }}">
     <script type="text/javascript" src="{{ asset('bundles/trixeditor/trix.umd.min.js')}}"></script>
-    <input id="{{ id }}" type="text" name="{{ full_name }}" {{ required ? "required" : "" }} value="{{ value }}">
+    <input id="{{ id }}" type="hidden" name="{{ full_name }}" {{ required ? "required" : "" }} value="{{ value }}">
     <trix-editor input="{{ id }}" id="{{ id }}_editor"></trix-editor>
 {%- endblock -%}
