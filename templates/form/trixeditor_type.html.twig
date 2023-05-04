@@ -1,4 +1,7 @@
 {%- block trixeditor_widget -%}
+    {% if form.vars.help is defined and form.vars.help is not null %}
+        <small class="form-text text-muted m-0 p-0"><i>{{ form.vars.help }}</i></small>
+    {% endif %}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/trixeditor/trix.css') }}">
     <script type="text/javascript" src="{{ asset('bundles/trixeditor/trix.umd.min.js')}}"></script>
     <input id="{{ id }}" type="hidden" name="{{ full_name }}" {{ required ? "required" : "" }} value="{{ value }}">
