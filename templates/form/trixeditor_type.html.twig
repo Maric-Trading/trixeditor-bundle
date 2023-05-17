@@ -6,4 +6,15 @@
     <script type="text/javascript" src="{{ asset('bundles/trixeditor/trix.umd.min.js')}}"></script>
     <input id="{{ id }}" type="hidden" name="{{ full_name }}" {{ required ? "required" : "" }} value="{{ value }}">
     <trix-editor input="{{ id }}" id="{{ id }}_editor"></trix-editor>
+    <script type="text/javascript">
+        (function() {
+            addEventListener("trix-initialize", function(e) {
+                const file_tools = document.querySelector(".trix-button-group--file-tools");
+                file_tools.remove();
+            })
+            addEventListener("trix-file-accept", function(e) {
+                e.preventDefault();
+            })
+        })();
+    </script>
 {%- endblock -%}
