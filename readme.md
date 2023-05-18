@@ -9,12 +9,12 @@ This is something we use a lot in our internal projects so it assumes that you a
 
 ## File Uploads ##
 
-File uploads can be enabled by setting `allow_uploads` in the `options` to a string containing the **ABSOLUTE URL** for the controller action.  The file will be uploaded in the file key `file`.
+File uploads can be enabled by setting `allow_uploads` in the `options` to a string containing the path for the controller action.  The file will be uploaded in the file key `file`.
 
 ```php
         $builder
             ->add('field_name')
-            ->add('trix', TrixEditorType::class,["allow_uploads"=>$this->router->generate("app_upload",[], UrlGeneratorInterface::ABSOLUTE_URL),])
+            ->add('trix', TrixEditorType::class,["allow_uploads"=>$this->router->generate("app_upload"])
         ;
 ```
 
