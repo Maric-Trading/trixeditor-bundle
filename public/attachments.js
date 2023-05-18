@@ -27,10 +27,6 @@
         var key = createStorageKey(file)
         var formData = createFormData(key, file)
         var xhr = new XMLHttpRequest()
-        const getHost = endpoint => new URL(endpoint).protocol + '//' + new URL(endpoint).host;
-        const host = getHost(endpoint);
-
-
 
         xhr.open("POST", endpoint, true)
 
@@ -43,8 +39,8 @@
             if (xhr.status == 200) {
                 const path = xhr.response;
                 var attributes = {
-                    url: host + path,
-                    href: host + path + "?content-disposition=attachment"
+                    url: path,
+                    href: path + "?content-disposition=attachment"
                 }
                 successCallback(attributes)
             }

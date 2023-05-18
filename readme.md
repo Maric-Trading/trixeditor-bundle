@@ -20,6 +20,6 @@ File uploads can be enabled by setting `allow_uploads` in the `options` to a str
 
 **You are responsible for writing the server side persistance**.
 
-The response should be a plain string containing the URL of the file and the status code should be 200.
+The response should be a plain string containing the full URL of the file including the host.  This allows you to store on third party cloud services.  The status code should be 200.
 
 
