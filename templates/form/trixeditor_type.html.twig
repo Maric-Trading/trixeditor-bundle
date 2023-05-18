@@ -3,18 +3,23 @@
         <small class="form-text text-muted m-0 p-0"><i>{{ form.vars.help }}</i></small>
     {% endif %}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/trixeditor/trix.css') }}">
-    <script type="text/javascript" src="{{ asset('bundles/trixeditor/trix.umd.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/trixeditor/trix.umd.min.js') }}"></script>
     <input id="{{ id }}" type="hidden" name="{{ full_name }}" {{ required ? "required" : "" }} value="{{ value }}">
-    <trix-editor input="{{ id }}" id="{{ id }}_editor"></trix-editor>
-    <script type="text/javascript">
-        (function() {
-            addEventListener("trix-initialize", function(e) {
-                const file_tools = document.querySelector(".trix-button-group--file-tools");
-                file_tools.remove();
-            })
-            addEventListener("trix-file-accept", function(e) {
-                e.preventDefault();
-            })
-        })();
-    </script>
+    <trix-editor input="{{ id }}" id="{{ id }}_editor" {% if form.vars.allow_uploads %}data-upload="{{ form.vars.allow_uploads }}"{% endif %}></trix-editor>
+    {% if form.vars.allow_uploads == false %}
+        <script type="text/javascript">
+            (function () {
+                addEventListener("trix-initialize", function (e) {
+                    const file_tools = document.querySelector(".trix-button-group--file-tools");
+                    file_tools.remove();
+                })
+                addEventListener("trix-file-accept", function (e) {
+                    e.preventDefault();
+                })
+            })();
+        </script>
+    {% endif %}
+    {% if form.vars.allow_uploads %}
+        <script type="text/javascript" src="{{ asset('bundles/trixeditor/attachments.js') }}"></script>
+    {% endif %}
 {%- endblock -%}
